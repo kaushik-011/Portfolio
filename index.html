@@ -1,608 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kaushik Portfolio</title>
+    <title>Kaushik Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;800&display=swap" rel="stylesheet">
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        body {
+            background: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
 
-body{
-    background:#050505;
-    color:white;
-    overflow-x:hidden;
-}
+        /* GLOW BACKGROUND */
+        body::before {
+            content: '';
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #00ffc3;
+            filter: blur(180px);
+            opacity: 0.12;
+            top: -120px;
+            right: -120px;
+            z-index: -1;
+        }
 
-/* GLOW BACKGROUND */
-body::before{
-    content:'';
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:#00ffc3;
-    filter:blur(180px);
-    opacity:0.12;
-    top:-120px;
-    right:-120px;
-    z-index:-1;
-}
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-/* NAVBAR */
-nav{
-    position:fixed;
-    width:100%;
-    padding:18px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-    border-bottom:1px solid rgba(255,255,255,0.05);
-}
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00ffc3;
+        }
 
-.logo{
-    font-size:28px;
-    font-weight:700;
-    color:#00ffc3;
-}
+        nav div a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+            font-size: 16px;
+        }
 
-nav div a{
-    margin-left:30px;
-    text-decoration:none;
-    color:white;
-    transition:0.3s;
-    font-size:16px;
-}
+        nav div a:hover {
+            color: #00ffc3;
+        }
 
-nav div a:hover{
-    color:#00ffc3;
-}
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            gap: 50px;
+        }
 
-/* HERO SECTION */
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 8%;
-    gap:50px;
-}
+        .hero-text {
+            max-width: 650px;
+        }
 
-.hero-text{
-    max-width:650px;
-}
+        .hero-text h1 {
+            font-size: 5rem;
+            line-height: 1.1;
+            font-weight: 800;
+        }
 
-.hero-text h1{
-    font-size:5rem;
-    line-height:1.1;
-    font-weight:800;
-}
+        .highlight {
+            color: #00ffc3;
+        }
 
-.highlight{
-    color:#00ffc3;
-}
+        .hero-text p {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #cfcfcf;
+            line-height: 1.8;
+        }
 
-.hero-text p{
-    margin-top:20px;
-    font-size:1.2rem;
-    color:#cfcfcf;
-    line-height:1.8;
-}
+        /* BUTTONS */
+        .buttons {
+            margin-top: 35px;
+        }
 
-/* BUTTONS */
-.buttons{
-    margin-top:35px;
-}
+        button {
+            padding: 14px 30px;
+            margin-right: 15px;
+            border: 2px solid #00ffc3;
+            background: transparent;
+            color: #00ffc3;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 15px;
+            border-radius: 10px;
+        }
 
-button{
-    padding:14px 30px;
-    margin-right:15px;
-    border:2px solid #00ffc3;
-    background:transparent;
-    color:#00ffc3;
-    cursor:pointer;
-    transition:0.3s;
-    font-size:15px;
-    border-radius:10px;
-}
+        button:hover {
+            background: #00ffc3;
+            color: black;
+            box-shadow: 0 0 30px #00ffc3;
+        }
 
-button:hover{
-    background:#00ffc3;
-    color:black;
-    box-shadow:0 0 30px #00ffc3;
-}
+        /* SOCIALS */
+        .socials {
+            margin-top: 30px;
+        }
 
-/* SOCIALS */
-.socials{
-    margin-top:30px;
-}
+        .socials a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #aaa;
+            transition: 0.3s;
+        }
 
-.socials a{
-    margin-right:20px;
-    text-decoration:none;
-    color:#aaa;
-    transition:0.3s;
-}
+        .socials a:hover {
+            color: #00ffc3;
+        }
 
-.socials a:hover{
-    color:#00ffc3;
-}
+        /* IMAGE */
+        .hero img {
+            width: 400px;
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 40px #00ffc3);
+        }
 
-/* IMAGE */
-.hero img{
-    width:400px;
-    animation:float 4s ease-in-out infinite;
-    filter:drop-shadow(0 0 40px #00ffc3);
-}
+        @keyframes float {
+            50% {
+                transform: translateY(-20px);
+            }
+        }
 
-@keyframes float{
-    50%{
-        transform:translateY(-20px);
-    }
-}
+        /* SECTIONS */
+        section {
+            padding: 120px 8%;
+        }
 
-/* SECTIONS */
-section{
-    padding:120px 8%;
-}
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
 
-h2{
-    font-size:3rem;
-    margin-bottom:50px;
-}
+        /* SKILLS */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
-/* SKILLS */
-.skills{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
+        .skill-card {
+            background: #111;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #222;
+            transition: 0.4s;
+            font-size: 18px;
+        }
 
-.skill-card{
-    background:#111;
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
-    border:1px solid #222;
-    transition:0.4s;
-    font-size:18px;
-}
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px #00ffc3;
+            border: 1px solid #00ffc3;
+        }
 
-.skill-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 30px #00ffc3;
-    border:1px solid #00ffc3;
-}
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
-/* PROJECTS */
-.projects{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
+        .project {
+            background: #111;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            transition: 0.4s;
+        }
 
-.project{
-    background:#111;
-    padding:35px;
-    border-radius:20px;
-    border:1px solid #222;
-    transition:0.4s;
-}
+        .project:hover {
+            transform: translateY(-15px);
+            border: 1px solid #00ffc3;
+            box-shadow: 0 0 30px #00ffc3;
+        }
 
-.project:hover{
-    transform:translateY(-15px);
-    border:1px solid #00ffc3;
-    box-shadow:0 0 30px #00ffc3;
-}
+        .project h3 {
+            margin-bottom: 15px;
+        }
 
-.project h3{
-    margin-bottom:15px;
-}
+        .project p {
+            color: #bbb;
+            line-height: 1.7;
+        }
 
-.project p{
-    color:#bbb;
-    line-height:1.7;
-}
+        /* CONTACT */
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 18px;
+            margin-top: 20px;
+            background: #111;
+            border: 1px solid #222;
+            color: white;
+            border-radius: 10px;
+            outline: none;
+        }
 
-/* CONTACT */
-.contact input,
-.contact textarea{
-    width:100%;
-    padding:18px;
-    margin-top:20px;
-    background:#111;
-    border:1px solid #222;
-    color:white;
-    border-radius:10px;
-    outline:none;
-}
+        .contact textarea {
+            height: 180px;
+            resize: none;
+        }
 
-.contact textarea{
-    height:180px;
-    resize:none;
-}
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+        }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:40px;
-    color:#888;
-}
+        /* MOBILE */
+        @media(max-width:950px) {
 
-/* MOBILE */
-@media(max-width:950px){
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 120px;
+            }
 
-.hero{
-    flex-direction:column-reverse;
-    text-align:center;
-    padding-top:120px;
-}
+            .hero img {
+                width: 280px;
+            }
 
-.hero img{
-    width:280px;
-}
+            .hero-text h1 {
+                font-size: 3rem;
+            }
 
-.hero-text h1{
-    font-size:3rem;
-}
+            .skills,
+            .projects {
+                grid-template-columns: 1fr;
+            }
 
-.skills,
-.projects{
-    grid-template-columns:1fr;
-}
+            nav {
+                padding: 15px 5%;
+            }
 
-nav{
-    padding:15px 5%;
-}
+            nav div a {
+                margin-left: 15px;
+                font-size: 14px;
+            }
 
-nav div a{
-    margin-left:15px;
-    font-size:14px;
-}
+        }
 
-}
-
-/* =========================
+        /* =========================
    MOBILE RESPONSIVE FIX
 ========================= */
 
-@media(max-width:950px){
+        @media(max-width:950px) {
 
-/* NAVBAR */
-nav{
-    padding:15px 5%;
-    flex-direction:column;
-    gap:15px;
-}
+            /* NAVBAR */
+            nav {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 15px;
+            }
 
-nav div{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-}
+            nav div {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
 
-nav div a{
-    margin-left:0;
-    font-size:14px;
-}
+            nav div a {
+                margin-left: 0;
+                font-size: 14px;
+            }
 
-/* HERO */
-.hero{
-    flex-direction:column-reverse;
-    text-align:center;
-    padding-top:140px;
-}
+            /* HERO */
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 140px;
+            }
 
-/* HERO IMAGE */
-.hero img{
-    width:100%;
-    max-width:280px;
-}
+            /* HERO IMAGE */
+            .hero img {
+                width: 100%;
+                max-width: 280px;
+            }
 
-/* HERO TEXT */
-.hero-text h1{
-    font-size:3rem;
-}
+            /* HERO TEXT */
+            .hero-text h1 {
+                font-size: 3rem;
+            }
 
-.hero-text p{
-    font-size:1rem;
-    line-height:1.7;
-}
+            .hero-text p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
 
-/* BUTTONS */
-.buttons{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-}
+            /* BUTTONS */
+            .buttons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
 
-button{
-    margin-right:0;
-}
+            button {
+                margin-right: 0;
+            }
 
-/* SKILLS + PROJECTS */
-.skills,
-.projects{
-    grid-template-columns:1fr;
-}
+            /* SKILLS + PROJECTS */
+            .skills,
+            .projects {
+                grid-template-columns: 1fr;
+            }
 
 
 
-/* SECTION SPACING */
-section{
-    padding:100px 6%;
-}
+            /* SECTION SPACING */
+            section {
+                padding: 100px 6%;
+            }
 
-/* PROJECT BUTTON */
-.project button{
-    margin-top:15px;
-}
+            /* PROJECT BUTTON */
+            .project button {
+                margin-top: 15px;
+            }
 
-}
+        }
 
-/* =========================
+        /* =========================
    SMALL MOBILE DEVICES
 ========================= */
 
-@media(max-width:500px){
+        @media(max-width:500px) {
 
-.hero-text h1{
-    font-size:2.3rem;
-}
+            .hero-text h1 {
+                font-size: 2.3rem;
+            }
 
-h2{
-    font-size:2rem;
-}
+            h2 {
+                font-size: 2rem;
+            }
 
-button{
-    width:100%;
-}
+            button {
+                width: 100%;
+            }
 
-.hero img{
-    max-width:230px;
-}
+            .hero img {
+                max-width: 230px;
+            }
 
-nav{
-    padding:12px 4%;
-}
+            nav {
+                padding: 12px 4%;
+            }
 
-}
-
-</style>
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
+    <!-- NAVBAR -->
+    <nav>
 
-    <div class="logo">Kaushik</div>
+        <div class="logo">Kaushik</div>
 
-    <div>
-        <a href="#home">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-
-    <div class="hero-text">
-
-        <h1>
-            Hello, <br>
-            I Am <span class="highlight">Kaushik</span>
-        </h1>
-
-        <p>
-            Creative Frontend Developer building cinematic modern websites
-            with smooth animations and premium UI design.
-        </p>
-
-        <div class="buttons">
-
-            <button onclick="scrollToSection('projects')">	
-                View Projects
-            </button>
-
-            <button onclick="downloadResume()">
-                Download CV
-            </button>
-
+        <div>
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
 
-        <div class="socials">
+    </nav>
 
-            <a href="https://github.com/" target="_blank">GitHub</a>
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-            <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+        <div class="hero-text">
 
-            <a href="https://instagram.com/" target="_blank">Instagram</a>
-
-        </div>
-
-    </div>
-
-    <!-- PUT YOUR PNG IMAGE -->
-    <img src="C:\Users\KAUSHIK SOLANKI\Downloads\kaushikk.png" alt="Kaushik">
-
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-
-    <h2 class="h1" >My Skills</h2>
-
-    <div class="skills">
-
-        <div class="skill-card">HTML</div>
-
-        <div class="skill-card">CSS</div>
-
-        <div class="skill-card">JavaScript</div>
-
-        <div class="skill-card">React</div>
-
-        <div class="skill-card">Python</div>
-
-        <div class="skill-card">UI/UX Design</div>
-
-    </div>
-
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-
-    <h2>Projects</h2>
-
-    <div class="projects">
-
-        <div class="project">
-
-            <h3>AI Assistant</h3>
+            <h1>
+                Hello, <br>
+                I Am <span class="highlight">Kaushik</span>
+            </h1>
 
             <p>
-                Voice based automation system using Python and AI.
+                Creative Frontend Developer building cinematic modern websites
+                with smooth animations and premium UI design.
             </p>
 
-            <button onclick="openLink('https://github.com/')">
-                GitHub
-            </button>
+            <div class="buttons">
 
-            <button onclick="openLink('https://your-live-site.com')">
-                Live Demo
-            </button>
+                <button onclick="scrollToSection('projects')">
+                    View Projects
+                </button>
+
+                <button onclick="downloadResume()">
+                    Download CV
+                </button>
+
+            </div>
+
+            <div class="socials">
+
+                <a href="https://github.com/" target="_blank">GitHub</a>
+
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+
+                <a href="https://instagram.com/" target="_blank">Instagram</a>
+
+            </div>
 
         </div>
 
-        <div class="project">
+        <!-- PUT YOUR PNG IMAGE -->
+        <img src="image/kaushikk.png" alt="Kaushik">
 
-            <h3>Restaurant Website</h3>
+    </section>
 
-            <p>
-                Modern animated restaurant landing page with premium UI.
-            </p>
+    <!-- SKILLS -->
+    <section id="skills">
 
-            <button onclick="openLink('https://github.com/')">
-                GitHub
-            </button>
+        <h2 class="h1">My Skills</h2>
 
-            <button onclick="openLink('https://your-live-site.com')">
-                Live Demo
-            </button>
+        <div class="skills">
+
+            <div class="skill-card">HTML</div>
+
+            <div class="skill-card">CSS</div>
+
+            <div class="skill-card">JavaScript</div>
+
+            <div class="skill-card">React</div>
+
+            <div class="skill-card">Python</div>
+
+            <div class="skill-card">UI/UX Design</div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>AI Assistant</h3>
+
+                <p>
+                    Voice based automation system using Python and AI.
+                </p>
+
+                <button onclick="openLink('https://github.com/')">
+                    GitHub
+                </button>
+
+                <button onclick="openLink('https://your-live-site.com')">
+                    Live Demo
+                </button>
+
+            </div>
+
+            <div class="project">
+
+                <h3>Restaurant Website</h3>
+
+                <p>
+                    Modern animated restaurant landing page with premium UI.
+                </p>
+
+                <button onclick="openLink('https://github.com/')">
+                    GitHub
+                </button>
+
+                <button onclick="openLink('https://your-live-site.com')">
+                    Live Demo
+                </button>
+
+            </div>
+
+            <div class="project">
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    Cinematic personal portfolio website with glow effects.
+                </p>
+
+                <button onclick="openLink('https://github.com/')">
+                    GitHub
+                </button>
+
+                <button onclick="openLink('https://your-live-site.com')">
+                    Live Demo
+                </button>
+
+            </div>
+
+
+
+
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="projects">
+            <div class="project">
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    Cinematic personal portfolio website with glow effects.
+                </p>
+
+                <button onclick="openLink('https://github.com/')">
+                    GitHub
+                </button>
+
+                <button onclick="openLink('https://your-live-site.com')">
+                    Live Demo
+                </button>
+
+            </div>
 
         </div>
 
-        <div class="project">
 
-            <h3>Portfolio Website</h3>
+    </section>
 
-            <p>
-                Cinematic personal portfolio website with glow effects.
-            </p>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
 
-            <button onclick="openLink('https://github.com/')">
-                GitHub
-            </button>
+        <h2>Contact Me</h2>
 
-            <button onclick="openLink('https://your-live-site.com')">
-                Live Demo
-            </button>
+        <input type="text" placeholder="Your Name">
 
-        </div>
-		
+        <input type="email" placeholder="Your Email">
 
-        
+        <textarea placeholder="Your Message"></textarea>
 
-    </div>
-	<br/>
-	<br/>
-	<br/>
-	<div class="projects">
-	        <div class="project">
+        <button>Send Message</button>
 
-            <h3>Portfolio Website</h3>
+    </section>
 
-            <p>
-                Cinematic personal portfolio website with glow effects.
-            </p>
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Kaushik Portfolio
+    </footer>
 
-            <button onclick="openLink('https://github.com/')">
-                GitHub
-            </button>
+    <script>
 
-            <button onclick="openLink('https://your-live-site.com')">
-                Live Demo
-            </button>
+        /* SMOOTH SCROLL */
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
 
-        </div>
-		
-	</div>
-	
+        /* OPEN LINKS */
+        function openLink(url) {
+            window.open(url, "_blank");
+        }
 
-</section>
+        /* DOWNLOAD CV */
+        function downloadResume() {
+            window.open("resume.pdf");
+        }
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-
-    <h2>Contact Me</h2>
-
-    <input type="text" placeholder="Your Name">
-
-    <input type="email" placeholder="Your Email">
-
-    <textarea placeholder="Your Message"></textarea>
-
-    <button>Send Message</button>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-    © 2026 Kaushik Portfolio
-</footer>
-
-<script>
-
-/* SMOOTH SCROLL */
-function scrollToSection(id){
-    document.getElementById(id).scrollIntoView({
-        behavior:"smooth"
-    });
-}
-
-/* OPEN LINKS */
-function openLink(url){
-    window.open(url,"_blank");
-}
-
-/* DOWNLOAD CV */
-function downloadResume(){
-    window.open("resume.pdf");
-}
-
-</script>
+    </script>
 
 </body>
+
 </html>
